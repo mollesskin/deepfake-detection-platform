@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DeepCheck — AI Image Verification</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container nav">
+
+        <a href="#" class="logo">
+            <span class="logo-mark">
+                <span></span>
+                <span></span>
+            </span>
+
+            <span>DeepCheck</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="#how" id="navHow">How it works</a>
+            <a href="#about" id="navAbout">About</a>
+
+            <div class="language-switcher">
+                <button class="language-button" id="languageButton">
+                    EN
+                </button>
+
+                <div class="language-menu hidden" id="languageMenu">
+                    <button data-language="ru">RU</button>
+                    <button data-language="kz">KZ</button>
+                    <button data-language="en">EN</button>
+                </div>
+            </div>
+        </nav>
+
+        <a href="#checker" class="nav-button">
+            Check image
+        </a>
+
+    </div>
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+        <div class="container hero-grid">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    <span class="status-dot"></span>
+                    AI-powered image verification
+                </div>
+
+                <h1>
+                    Is this image
+                    <span>real or AI?</span>
+                </h1>
+
+                <p class="hero-text">
+                    Upload an image and let our AI model
+                    check whether it looks real or artificially generated.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#checker" class="primary-button">
+                        Check an image
+                        <span>→</span>
+                    </a>
+
+                    <a href="#how" class="secondary-button">
+                        How it works
+                    </a>
+                </div>
+
+                <div class="trust-row">
+                    <div class="trust-item">
+                        <strong>JPG</strong>
+                        <span>Supported</span>
+                    </div>
+
+                    <div class="trust-divider"></div>
+
+                    <div class="trust-item">
+                        <strong>PNG</strong>
+                        <span>Supported</span>
+                    </div>
+
+                    <div class="trust-divider"></div>
+
+                    <div class="trust-item">
+                        <strong>10 MB</strong>
+                        <span>Maximum</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="image-showcase">
+
+                    <div class="showcase-image">
+                        <div class="fake-label">AI GENERATED</div>
+                    </div>
+
+                    <div class="showcase-info">
+                        <div>
+                            <span class="result-label">Example result</span>
+                            <strong>AI generated</strong>
+                        </div>
+
+                        <div class="confidence">
+                            <strong>91%</strong>
+                            <span>confidence</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CHECKER -->
+
+    <section class="checker-section" id="checker">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="eyebrow">
+                    <span class="status-dot"></span>
+                    Image checker
+                </div>
+
+                <h2>
+                    Check your image
+                </h2>
+
+                <p>
+                    Choose a photo from your device. The result will appear
+                    after the model finishes checking it.
+                </p>
+            </div>
+
+
+            <div class="checker-card">
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    accept=".jpg,.jpeg,.png,image/jpeg,image/png"
+                    hidden
+                >
+
+                <div id="uploadState">
+
+                    <div class="upload-icon">
+                        <span class="upload-logo-mark">
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+
+                    <h3 id="uploadTitle">
+                        Upload your image
+                    </h3>
+
+                    <p id="uploadDescription">
+                        Choose a photo from your device
+                    </p>
+
+                    <button class="upload-button" id="chooseButton">
+                        Choose image
+                    </button>
+
+                    <div class="upload-hint" id="uploadHint">
+                        JPG or PNG · Maximum 10 MB
+                    </div>
+
+                </div>         ↑
+               
+
+
+                <div id="previewState" class="hidden">
+
+                    <div class="preview-wrapper">
+                        <img id="previewImage" alt="Selected image">
+                    </div>
+
+                    <div class="file-information">
+
+                        <div>
+                            <span class="file-label">Selected image</span>
+                            <strong id="fileName">image.jpg</strong>
+                        </div>
+
+                        <span id="fileSize" class="file-size">
+                            0 MB
+                        </span>
+
+                    </div>
+
+                    <div class="preview-actions">
+
+                        <button
+                            class="primary-button full-button"
+                            id="checkButton"
+                        >
+                            Check image
+                            <span>→</span>
+                        </button>
+
+                        <button
+                            class="text-button"
+                            id="changeButton"
+                        >
+                            Choose another image
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div id="loadingState" class="hidden">
+
+                    <div class="loader"></div>
+
+                    <h3>
+                        Checking your image
+                    </h3>
+
+                    <p>
+                        Our model is analyzing the image.
+                        Please wait.
+                    </p>
+
+                </div>
+
+
+                <div id="resultState" class="hidden">
+
+                    <div id="resultIcon" class="result-icon">
+                        ✓
+                    </div>
+
+                    <div class="result-title">
+                        <span>Analysis complete</span>
+                        <h3 id="resultLabel">
+                            REAL
+                        </h3>
+                    </div>
+
+                    <div class="confidence-box">
+
+                        <div class="confidence-header">
+                            <span>Confidence</span>
+                            <strong id="confidenceValue">94%</strong>
+                        </div>
+
+                        <div class="progress">
+                            <div
+                                id="confidenceProgress"
+                                class="progress-bar"
+                            ></div>
+                        </div>
+
+                    </div>
+
+                    <p id="resultDescription" class="result-description">
+                        The image appears to be authentic.
+                    </p>
+
+                    <div class="experimental-note">
+                        This is an experimental model. Results may be incorrect.
+                    </div>
+
+                    <button
+                        class="primary-button full-button"
+                        id="anotherButton"
+                    >
+                        Check another image
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+
+                <div id="errorState" class="hidden">
+
+                    <div class="error-icon">
+                        !
+                    </div>
+
+                    <h3 id="errorTitle">
+                        Something went wrong
+                    </h3>
+
+                    <p id="errorMessage">
+                        Please try again.
+                    </p>
+
+                    <button
+                        class="primary-button"
+                        id="errorButton"
+                    >
+                        Try again
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="how-section" id="how">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="eyebrow">
+                    Simple process
+                </div>
+
+                <h2>
+                    Three simple steps
+                </h2>
+
+                <p>
+                    No technical knowledge is required.
+                </p>
+            </div>
+
+
+            <div class="steps">
+
+                <div class="step-card">
+                    <span class="step-number">01</span>
+
+                    <div class="step-icon">
+                        ↑
+                    </div>
+
+                    <h3>Upload</h3>
+
+                    <p>
+                        Choose a JPG or PNG image from your device.
+                    </p>
+                </div>
+
+
+                <div class="step-card">
+                    <span class="step-number">02</span>
+
+                    <div class="step-icon">
+                        ◌
+                    </div>
+
+                    <h3>Analyze</h3>
+
+                    <p>
+                        Our model analyzes the image for signs of AI generation.
+                    </p>
+                </div>
+
+
+                <div class="step-card">
+                    <span class="step-number">03</span>
+
+                    <div class="step-icon">
+                        ✓
+                    </div>
+
+                    <h3>Get result</h3>
+
+                    <p>
+                        See whether the image looks real or AI-generated.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about-section" id="about">
+
+        <div class="container about-card">
+
+            <div>
+                <div class="eyebrow">
+                    About the project
+                </div>
+
+                <h2>
+                    Built to make AI detection easier to understand.
+                </h2>
+            </div>
+
+            <p>
+                DeepCheck is a deepfake detection platform.
+                It connects a simple web interface with a machine learning
+                model that analyzes uploaded images.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="container footer-content">
+
+        <div class="logo">
+            <span class="logo-mark">
+                <span></span>
+                <span></span>
+            </span>
+
+            <span>DeepCheck</span>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
