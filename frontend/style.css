@@ -48,8 +48,6 @@ a {
 }
 
 
-/* HEADER */
-
 .header {
     height: 78px;
     background: rgba(255, 255, 255, 0.86);
@@ -109,6 +107,7 @@ a {
 
 .nav-links {
     display: flex;
+    align-items: center;
     gap: 36px;
     color: #475467;
     font-size: 14px;
@@ -128,8 +127,6 @@ a {
     font-weight: 600;
 }
 
-
-/* HERO */
 
 .hero {
     padding: 100px 0 110px;
@@ -254,8 +251,6 @@ a {
 }
 
 
-/* HERO VISUAL */
-
 .hero-visual {
     position: relative;
     max-width: 500px;
@@ -282,6 +277,12 @@ a {
         linear-gradient(145deg, #d5dbe4, #657184);
 }
 
+.showcase-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
 .showcase-image::after {
     content: "";
     position: absolute;
@@ -384,8 +385,6 @@ a {
     font-weight: 800;
 }
 
-/* SECTIONS */
-
 .checker-section,
 .how-section,
 .about-section {
@@ -413,8 +412,6 @@ a {
     margin-top: 16px;
 }
 
-
-/* CHECKER */
 
 .checker-card {
     max-width: 760px;
@@ -479,8 +476,6 @@ a {
 }
 
 
-/* PREVIEW */
-
 #previewState {
     width: 100%;
 }
@@ -543,9 +538,6 @@ a {
     font-size: 13px;
 }
 
-
-/* LOADING */
-
 .loader {
     width: 48px;
     height: 48px;
@@ -562,8 +554,6 @@ a {
     }
 }
 
-
-/* RESULT */
 
 .result-icon {
     background: #ecfdf3;
@@ -633,8 +623,6 @@ a {
 }
 
 
-/* ERROR */
-
 .error-icon {
     background: #fef3f2;
     color: var(--danger);
@@ -644,8 +632,6 @@ a {
     color: var(--danger);
 }
 
-
-/* STEPS */
 
 .steps {
     display: grid;
@@ -694,9 +680,6 @@ a {
     line-height: 1.6;
 }
 
-
-/* ABOUT */
-
 .about-card {
     background: #101828;
     color: white;
@@ -723,8 +706,6 @@ a {
 }
 
 
-/* FOOTER */
-
 .footer {
     padding: 30px 0;
     border-top: 1px solid var(--border);
@@ -739,8 +720,6 @@ a {
     font-size: 12px;
 }
 
-
-/* MOBILE */
 
 @media (max-width: 900px) {
 
@@ -860,19 +839,29 @@ a {
     }
 }
 
-/* LANGUAGE SWITCHER */
 
 .language-switcher {
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .language-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 48px;
+    min-width: 72px;
+
     border: 1px solid var(--border);
     background: white;
     color: var(--text);
-    padding: 9px 13px;
-    border-radius: 9px;
-    font-size: 12px;
+
+    padding: 0 16px;
+    border-radius: 16px;
+
+    font-size: 14px;
     font-weight: 700;
     cursor: pointer;
 }
