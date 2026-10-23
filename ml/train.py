@@ -14,7 +14,6 @@ def main():
     ml_folder = Path(__file__).resolve().parent
     data_folder = ml_folder / "data" / "cifake" / "train"
 
-    # Подготавливаем картинки одинаковым способом.
     transform = transforms.Compose([
         transforms.Resize((64, 64)),
         transforms.ToTensor(),
@@ -25,7 +24,6 @@ def main():
         transform=transform,
     )
 
-    # Берём поровну настоящих и AI-изображений.
     train_indices = []
     val_indices = []
     generator = torch.Generator().manual_seed(42)
@@ -72,7 +70,6 @@ def main():
     print("Обучение:", len(train_indices), "изображений")
     print("Проверка:", len(val_indices), "изображений")
 
-    # Первый короткий запуск: один проход по данным.
     model.train()
     total_loss = 0
 
@@ -91,7 +88,6 @@ def main():
         if step % 10 == 0:
             print(f"Обработано порций: {step}/{len(train_loader)}")
 
-    # Проверяем на изображениях, которые не участвовали в обучении.
     model.eval()
     correct = 0
     total = 0
