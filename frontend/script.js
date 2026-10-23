@@ -1,7 +1,7 @@
 // Add backend API URL after the backend is ready!
 // like const API_ENDPOINT = "http://127.0.0.1:8000/predict";
 
-const API_ENDPOINT = "";
+const API_ENDPOINT = "http://127.0.0.1:8000/predict";;
 const API_FILE_FIELD = "image";
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 const ALLOWED_TYPES = ["image/jpeg", "image/png"];
