@@ -1,4 +1,4 @@
-# DeepCheck — Existing System Comparison
+# DeepCheck - Existing System Comparison
 
 ## 1. Purpose
 
