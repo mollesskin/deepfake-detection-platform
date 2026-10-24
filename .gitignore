@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # .venv/
 # __pycache__/
 # *.pyc
@@ -30,3 +31,12 @@ models/checkpoints/
 .vscode/
 .idea/
 .DS_Store
+=======
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+ml/data/
+ml/checkpoints/
+ml/runs/
+>>>>>>> 34ebeebbfb97ad95e165c6aa194c3fd0e424ed5f
