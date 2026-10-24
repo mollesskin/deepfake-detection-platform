@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # DeepCheck - Deepfake Detection Platform
 
 DeepCheck is a web-based deepfake detection prototype designed to analyze uploaded images and identify whether they are likely to be real or AI-generated.
