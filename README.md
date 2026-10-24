@@ -110,15 +110,15 @@ deepfake-detection-platform/
 │   └── verification-and-evaluation-plan.md
 │
 ├── diagrams/
-│   ├── system-architecture.png
-│   └── application-flow.png
+│   ├── system_architecture.png
+│   └── application_flow.png
 │
 ├── screenshots/
 │   ├── homepage.png
-│   ├── how-it-works.png
+│   ├── how_it_works.png
 │   ├── about.png
 │   ├── upload.png
-│   └── ai-result.png
+│   └── ai_result.png
 │
 ├── tests/
 │   └── test-cases.md
