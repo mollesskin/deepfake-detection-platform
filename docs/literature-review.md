@@ -1,4 +1,4 @@
-# DeepCheck — Literature Review
+# DeepCheck - Literature Review
 
 ## 1. Background
 
