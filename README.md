@@ -366,7 +366,7 @@ Current project tasks cover:
 
 ## Team
 
-### Nariman Nurai — SE-2410
+### Nariman Nurai - SE-2410
 
 Role: Frontend Developer
 
@@ -381,7 +381,7 @@ Main responsibilities:
 
 GitHub: `nuraikaan`
 
-### Omar Moldir — SE-2426
+### Omar Moldir - SE-2426
 
 Role: Machine Learning Developer
 
@@ -395,7 +395,7 @@ Main responsibilities:
 
 GitHub: `mollesskin`
 
-### Talgatova Ayaulym — SE-2427
+### Talgatova Ayaulym - SE-2427
 
 Role: Backend Developer
 
