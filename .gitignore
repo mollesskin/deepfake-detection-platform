@@ -1,0 +1,32 @@
+# .venv/
+# __pycache__/
+# *.pyc
+# .DS_Store
+# ml/data/
+# ml/checkpoints/
+# ml/runs/
+
+# Python / Environment
+__pycache__/
+.env
+.venv/
+venv/
+
+# Uploads & Temporary files
+uploads/
+temp/
+*.mp4
+*.avi
+
+# ML Models & Weights
+*.pt
+*.pth
+*.weights
+*.h5
+weights/
+models/checkpoints/
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
