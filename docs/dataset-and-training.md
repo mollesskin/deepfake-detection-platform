@@ -1,4 +1,4 @@
-# DeepCheck — Dataset and Training
+# DeepCheck - Dataset and Training
 
 ## 1. Purpose
 
