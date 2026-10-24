@@ -1,4 +1,4 @@
-# DeepCheck — Team Contributions
+# DeepCheck - Team Contributions
 
 ## 1. Team
 
@@ -10,7 +10,7 @@ The project is developed by three team members.
 | Omar Moldir | SE-2426 | Machine Learning |
 | Talgatova Ayaulym | SE-2427 | Backend |
 
-## 2. Frontend — Nariman Nurai
+## 2. Frontend - Nariman Nurai
 
 Main responsibilities:
 
@@ -30,7 +30,7 @@ Related YouTrack tasks:
 - DDP-9;
 - DDP-10.
 
-## 3. Machine Learning — Omar Moldir
+## 3. Machine Learning - Omar Moldir
 
 Main responsibilities:
 
@@ -46,7 +46,7 @@ Related YouTrack tasks:
 - DDP-5;
 - DDP-6.
 
-## 4. Backend — Talgatova Ayaulym
+## 4. Backend - Talgatova Ayaulym
 
 Main responsibilities:
 
