@@ -26,7 +26,6 @@ app.add_middleware(
 MAX_FILE_SIZE = 10 * 1024 * 1024
 ALLOWED_FORMATS = {"JPEG", "PNG"}
 
-# Pretrained image-classification model hosted on Hugging Face.
 MODEL_NAME = "capcheck/ai-image-detection"
 
 
@@ -88,7 +87,6 @@ async def predict(image: UploadFile = File(...)):
             detail="Image must be 10 MB or smaller",
         )
 
-    # Validate the actual image, not just its filename or MIME type.
     try:
         with Image.open(BytesIO(data)) as source:
             image_format = source.format
@@ -101,7 +99,6 @@ async def predict(image: UploadFile = File(...)):
 
             source.verify()
 
-        # Reopen the image after verify() and convert it for the model.
         with Image.open(BytesIO(data)) as source:
             img = source.convert("RGB")
 
@@ -117,7 +114,6 @@ async def predict(image: UploadFile = File(...)):
             detail="The uploaded file is not a valid image",
         )
 
-    # Run inference using the pretrained model.
     try:
         detector = get_detector()
         predictions = detector(img, top_k=2)
@@ -136,7 +132,6 @@ async def predict(image: UploadFile = File(...)):
         label = str(best["label"]).strip().lower()
         confidence = round(float(best["score"]) * 100, 2)
 
-        # Map model labels to the values expected by the frontend.
         if any(
             token in label
             for token in ("fake", "ai-generated", "ai generated", "artificial", "synthetic")
@@ -158,7 +153,7 @@ async def predict(image: UploadFile = File(...)):
     except HTTPException:
         raise
     except Exception:
-        # Keep internal model errors out of the public response.
+
         raise HTTPException(
             status_code=500,
             detail=(
